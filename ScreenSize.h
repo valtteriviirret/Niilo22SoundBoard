@@ -1,5 +1,5 @@
-#ifndef WINDOWSIZE_H
-#define WINDOWSIZE_H
+#ifndef SCREENSIZE_H
+#define SCREENSIZE_H
 
 enum Screen
 {

@@ -10,7 +10,6 @@ Renderer::~Renderer()
 	free();
 }
 
-
 bool Renderer::CreateRenderer()
 {
 	bool w = true;
@@ -32,6 +31,7 @@ bool Renderer::CreateRenderer()
 void Renderer::free()
 {
 	SDL_DestroyRenderer(renderer);
+	delete window;
 	renderer = NULL;
 }
 

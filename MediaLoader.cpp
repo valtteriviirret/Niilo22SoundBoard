@@ -24,6 +24,17 @@ bool MediaLoader::loadTexture(SDL_Renderer* renderer)
 	return w;
 }
 
+void MediaLoader::setSprites()
+{
+	for(int i = 0; i < Button::bamount; ++i)
+	{
+		SpriteClips[i].x = 0;
+		SpriteClips[i].y = i * 200;
+		SpriteClips[i].w = Button::bwidth;
+		SpriteClips[i].h = Button::bheight;
+	}
+}
+
 void MediaLoader::free()
 {
 	delete t;
