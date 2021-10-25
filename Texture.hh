@@ -18,7 +18,7 @@ class Texture
 		void setAlpha(Uint8 alpha);
 
 		// render texture at given point
-		void render(int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
+		void render(int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_RendererFlip flip = SDL_FLIP_NONE);
 		
 		// getters for dimensions
 		int getWidth();
@@ -28,6 +28,7 @@ class Texture
 		SDL_Texture* _texture;
 		
 		SDL_Renderer* _renderer;
+		SDL_Point* _center;
 		int _width;
 		int _height;
 };

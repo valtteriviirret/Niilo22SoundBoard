@@ -1,9 +1,9 @@
 #ifndef BTN_H
 #define BTN_H
 
-#include "BtnSprite.h"
-#include "ButtonSize.h"
-#include "Texture.h"
+#include "BtnSprite.hh"
+#include "ButtonSize.hh"
+#include "Texture.hh"
 #include <SDL2/SDL.h>
 
 class Btn

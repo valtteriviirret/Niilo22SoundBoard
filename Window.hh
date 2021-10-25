@@ -1,7 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 
-#include "ScreenSize.h"
+#include "ScreenSize.hh"
 #include <iostream>
 #include <SDL2/SDL.h>
 

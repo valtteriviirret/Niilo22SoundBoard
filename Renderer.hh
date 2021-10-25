@@ -1,7 +1,7 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include "Window.h"
+#include "Window.hh"
 #include <SDL2/SDL.h>
 #include <iostream>
 
