@@ -1,5 +1,6 @@
 #include "Window.h"
 #include "Renderer.h"
+#include "MediaLoader.h"
 #include <SDL2/SDL_image.h>
 
 int main()
@@ -21,6 +22,7 @@ int main()
 		if(!(IMG_Init(imgFlags) &imgFlags))
 			std::cout << "SDL_image could not initialize! SDL_Image Error:" << IMG_GetError() << "\n";
 		
+		MediaLoader m(r.getRenderer());
 	}
 
 	SDL_Delay(10000);
