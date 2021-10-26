@@ -13,8 +13,9 @@ Renderer::~Renderer()
 bool Renderer::CreateRenderer()
 {
 	bool w = true;
-	
+
 	window = new Window;
+
 	// create the renderer
 	renderer = SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if(renderer == NULL)
@@ -31,8 +32,8 @@ bool Renderer::CreateRenderer()
 void Renderer::free()
 {
 	SDL_DestroyRenderer(renderer);
-	delete window;
 	renderer = NULL;
+	delete window;
 }
 
 SDL_Renderer* Renderer::getRenderer() { return renderer; }

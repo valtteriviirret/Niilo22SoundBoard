@@ -6,12 +6,9 @@ Btn::Btn(Texture* t, SDL_Rect* Clips[Button::bamount])
 	_position.x = 0;
 	_position.y = 0;
 	_currentSprite = MOUSE_OUT;
-	
+
 	for(int i = 0; i < Button::bamount; i++)
-	{
-		_SpriteClips[i] = new SDL_Rect();
 		_SpriteClips[i] = Clips[i];
-	}
 }
 
 Btn::~Btn()
@@ -23,10 +20,7 @@ void Btn::free()
 {
 	_texture = NULL;
 	for(int i = 0; i < Button::bamount; i++)
-	{
-		delete _SpriteClips[i];
 		_SpriteClips[i] = NULL;
-	}
 }
 
 void Btn::setPosition(int x, int y)

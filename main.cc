@@ -56,7 +56,7 @@ int main()
 			SDL_RenderPresent(r.getRenderer());
 		}
 	}
-
+	
 	// close SDL
 	IMG_Quit();
 	SDL_Quit();

@@ -4,8 +4,12 @@ MediaLoader::MediaLoader(SDL_Renderer* renderer)
 {
 	_renderer = renderer;
 	loadTexture(renderer);
-	setButtons();
+
+	for(int i = 0; i < Button::bamount; i++)
+		SpriteClips[i] = new SDL_Rect;
+
 	setSprites();
+	setButtons();
 }
 
 MediaLoader::~MediaLoader()
@@ -35,9 +39,6 @@ bool MediaLoader::loadTexture(SDL_Renderer* renderer)
 void MediaLoader::setSprites()
 {
 	for(int i = 0; i < Button::bamount; ++i)
-		SpriteClips[i] = new SDL_Rect;
-
-	for(int i = 0; i < Button::bamount; ++i)
 	{
 		SpriteClips[i]->x = 0;
 		SpriteClips[i]->y = i * 200;
@@ -51,9 +52,11 @@ void MediaLoader::free()
 	delete t;
 	_renderer = NULL;
 	for(int i = 0; i < Button::bamount; i++)
+	{
 		delete Btns[i];
-	for(int i = 0; i < Button::bamount; i++)
 		delete SpriteClips[i];
+	}
 }
 
 Btn* MediaLoader::getBtn(int n) { return Btns[n]; } 
+

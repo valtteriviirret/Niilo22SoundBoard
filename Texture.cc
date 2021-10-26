@@ -3,6 +3,7 @@
 Texture::Texture(SDL_Renderer* renderer)
 {
 	_texture = NULL;
+	_center = NULL;
 	_width = 0;
 	_height = 0;
 	_renderer = renderer;
@@ -55,13 +56,12 @@ void Texture::free()
 		_renderer = NULL;
 		_width = 0;
 		_height = 0;
-		delete _center;
 	}
 }
 
 void Texture::setColor(Uint8 red, Uint8 green, Uint8 blue)
 {
-	SDL_SetTextureColorMod(_texture, red, green , blue);
+	SDL_SetTextureColorMod(_texture, red, green, blue);
 }
 
 void Texture::setBlendMode(SDL_BlendMode blending)
@@ -85,9 +85,6 @@ void Texture::render(int x, int y, SDL_Rect* clip, double angle, SDL_RendererFli
 		renderQuad.w = clip->w;
 		renderQuad.h = clip->h;
 	}
-
-	_center = new SDL_Point;
-	_center = NULL;
 
 	// render to screen
 	SDL_RenderCopyEx(_renderer, _texture, clip, &renderQuad, angle, _center, flip);

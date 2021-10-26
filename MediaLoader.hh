@@ -14,6 +14,7 @@ class MediaLoader
 		MediaLoader(SDL_Renderer* renderer);
 		~MediaLoader();
 		Btn* getBtn(int n);
+		SDL_Rect* getSprite(int n);
 			
 	private:
 		void free();
