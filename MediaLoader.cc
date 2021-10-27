@@ -13,13 +13,11 @@ MediaLoader::MediaLoader(SDL_Renderer* renderer)
 	setButtons();
 }
 
-MediaLoader::~MediaLoader()
-{
-	free();
-}
+MediaLoader::~MediaLoader() { free(); }
 
 void MediaLoader::setButtons()
 {
+	// create new buttons and set them to the screen
 	for(int i = 0; i < Button::bamount; i++)
 		Btns[i] = new Btn(t, SpriteClips, sounds[i]);
 
@@ -47,6 +45,7 @@ void MediaLoader::setButtons()
 
 bool MediaLoader::loadTexture(SDL_Renderer* renderer)
 {
+	// load images
 	bool w = true;
 	
 	t = new Texture(renderer);
@@ -60,6 +59,7 @@ bool MediaLoader::loadTexture(SDL_Renderer* renderer)
 
 void MediaLoader::setSprites()
 {
+	// set sprites from the picture
 	for(int i = 0; i < Button::bamount; ++i)
 	{
 		SpriteClips[i]->x = 0;
@@ -85,8 +85,6 @@ void MediaLoader::free()
 	}
 }
 
-Btn* MediaLoader::getBtn(int n) { return Btns[n]; } 
-
 bool MediaLoader::loadSound()
 {
 	// flag
@@ -110,6 +108,7 @@ bool MediaLoader::loadSound()
 	sounds[14] = Mix_LoadMUS("sounds/niilo14.mp3");
 	sounds[15] = Mix_LoadMUS("sounds/niilo15.mp3");
 	
+	// check if everything loaded properly
 	for(int i = 0; i < 16; i++)
 		if(sounds[i] == NULL)
 		{
@@ -119,5 +118,7 @@ bool MediaLoader::loadSound()
 	return w;
 }
 
+// getters
+Btn* MediaLoader::getBtn(int n) { return Btns[n]; } 
 Mix_Music* MediaLoader::getSound(int n){ return sounds[n]; }
 

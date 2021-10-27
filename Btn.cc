@@ -12,10 +12,7 @@ Btn::Btn(Texture* t, SDL_Rect* Clips[Button::bamount], Mix_Music* sound)
 		_SpriteClips[i] = Clips[i];
 }
 
-Btn::~Btn()
-{
-	free();
-}
+Btn::~Btn() { free(); }
 
 void Btn::free()
 {
@@ -81,6 +78,7 @@ void Btn::handleEvent(SDL_Event *e)
 
 void Btn::render()
 {
+	// render button texture
 	_texture->render(_position.x, _position.y, _SpriteClips[_currentSprite]);
 }
 

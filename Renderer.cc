@@ -1,19 +1,12 @@
 #include "Renderer.hh"
 
-Renderer::Renderer()
-{
-	CreateRenderer();
-}
+Renderer::Renderer() { CreateRenderer(); }
 
-Renderer::~Renderer()
-{
-	free();
-}
+Renderer::~Renderer() { free(); }
 
 bool Renderer::CreateRenderer()
 {
 	bool w = true;
-
 	window = new Window;
 
 	// create the renderer

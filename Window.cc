@@ -1,14 +1,8 @@
 #include "Window.hh"
 
-Window::Window() 
-{ 
-	createWindow(); 
-}
+Window::Window() { createWindow(); }
 
-Window::~Window()
-{
-	free();
-}
+Window::~Window() { free(); }
 
 bool Window::createWindow()
 {
