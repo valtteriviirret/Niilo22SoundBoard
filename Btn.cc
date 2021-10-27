@@ -1,7 +1,8 @@
 #include "Btn.hh"
 
-Btn::Btn(Texture* t, SDL_Rect* Clips[Button::bamount])
+Btn::Btn(Texture* t, SDL_Rect* Clips[Button::bamount], Mix_Music* sound)
 {
+	_sound = sound;
 	_texture = t;
 	_position.x = 0;
 	_position.y = 0;
@@ -19,6 +20,7 @@ Btn::~Btn()
 void Btn::free()
 {
 	_texture = NULL;
+	_sound = NULL;
 	for(int i = 0; i < Button::bamount; i++)
 		_SpriteClips[i] = NULL;
 }
@@ -69,6 +71,7 @@ void Btn::handleEvent(SDL_Event *e)
 				case SDL_MOUSEMOTION: _currentSprite = MOUSE_OVER; break;
 				case SDL_MOUSEBUTTONDOWN: 
 				_currentSprite = MOUSE_DOWN; 
+				Mix_PlayMusic(_sound, 1);
 				break;
 				case SDL_MOUSEBUTTONUP: _currentSprite = MOUSE_UP; break;
 			}

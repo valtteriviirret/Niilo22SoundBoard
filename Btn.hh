@@ -10,7 +10,7 @@
 class Btn
 {
 	public:
-		Btn(Texture* t, SDL_Rect* Clips[Button::bamount]);
+		Btn(Texture* t, SDL_Rect* Clips[Button::bamount], Mix_Music* sound);
 		~Btn();
 		void setPosition(int x, int y);
 		void handleEvent(SDL_Event* e);
@@ -19,6 +19,7 @@ class Btn
 		void free();
 		Texture* _texture;
 		SDL_Rect* _SpriteClips[Button::bamount];
+		Mix_Music* _sound;
 		SDL_Point _position;
 		BtnSprite _currentSprite;
 };

@@ -9,8 +9,8 @@ MediaLoader::MediaLoader(SDL_Renderer* renderer)
 		SpriteClips[i] = new SDL_Rect;
 
 	setSprites();
-	setButtons();
 	loadSound();
+	setButtons();
 }
 
 MediaLoader::~MediaLoader()
@@ -21,7 +21,7 @@ MediaLoader::~MediaLoader()
 void MediaLoader::setButtons()
 {
 	for(int i = 0; i < Button::bamount; i++)
-		Btns[i] = new Btn(t, SpriteClips);
+		Btns[i] = new Btn(t, SpriteClips, sounds[i]);
 
 	Btns[0]->setPosition(0, 0);
 	Btns[1]->setPosition(Button::bwidth, 0);
@@ -116,8 +116,6 @@ bool MediaLoader::loadSound()
 			std::cout << "Failed to load music file " << i << "Error: " << Mix_GetError() << "\n"; 
 			w = false;
 		}
-
-	//Mix_PlayMusic(n1, 1);
 	return w;
 }
 
