@@ -1,7 +1,7 @@
 # Niilo22SoundBoard
 Soundboard application made with SDL2
 
-![Program in action](program.png)
+![Program in action](images/program.png)
 
 # How to run the program:
 1. Install dependencies.

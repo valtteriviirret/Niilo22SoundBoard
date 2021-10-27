@@ -49,7 +49,7 @@ bool MediaLoader::loadTexture(SDL_Renderer* renderer)
 	bool w = true;
 	
 	t = new Texture(renderer);
-	if(!t->loadImage("image.png"))
+	if(!t->loadImage("images/image.png"))
 	{
 		std::cout << "Failed to load texture!\n";
 		w = false;
