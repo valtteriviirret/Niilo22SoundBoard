@@ -1,11 +1,12 @@
 #include "Renderer.hh"
 #include "MediaLoader.hh"
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 
 int main()
 {
 	// initialize SDL
-	if(SDL_Init(SDL_INIT_VIDEO) < 0)
+	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
 		std::cout << "SDL could not initialize! Error: " << SDL_GetError() << "\n";
 	else
 	{
@@ -20,6 +21,10 @@ int main()
 		int imgFlags = IMG_INIT_PNG;
 		if(!(IMG_Init(imgFlags) &imgFlags))
 			std::cout << "SDL_image could not initialize! SDL_Image Error:" << IMG_GetError() << "\n";
+
+		// initialize SDL_mixer
+		if(Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 640) < 0)
+			std::cout << "SDL_mixer could not initialize! SDL_mixer Error " << Mix_GetError() << "\n";
 		
 		// load the media
 		MediaLoader m(r.getRenderer());
@@ -59,6 +64,7 @@ int main()
 	
 	// close SDL
 	IMG_Quit();
+	Mix_Quit();
 	SDL_Quit();
 	
 	return 0;

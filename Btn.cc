@@ -32,13 +32,13 @@ void Btn::setPosition(int x, int y)
 void Btn::handleEvent(SDL_Event *e)
 {
 	// if mouse event happened
-	if(e->type == SDL_MOUSEMOTION || e->type == SDL_MOUSEBUTTONDOWN || e->type == SDL_MOUSEBUTTONDOWN)
+	if(e->type == SDL_MOUSEMOTION || e->type == SDL_MOUSEBUTTONDOWN || e->type == SDL_MOUSEBUTTONUP)
 	{
 		// get mouse position
 		int x, y;
 		SDL_GetMouseState(&x, &y);
 
-		// check if mouse is in btn
+		// check if mouse is in button
 		bool inside = true;
 
 		// mouse is in left of the button
@@ -60,13 +60,16 @@ void Btn::handleEvent(SDL_Event *e)
 		if(!inside)
 			_currentSprite = MOUSE_OUT;
 		
+		// mouse is inside button
 		else
 		{
 			// set mouse over sprite
 			switch(e -> type)
 			{
 				case SDL_MOUSEMOTION: _currentSprite = MOUSE_OVER; break;
-				case SDL_MOUSEBUTTONDOWN: _currentSprite = MOUSE_DOWN; break;
+				case SDL_MOUSEBUTTONDOWN: 
+				_currentSprite = MOUSE_DOWN; 
+				break;
 				case SDL_MOUSEBUTTONUP: _currentSprite = MOUSE_UP; break;
 			}
 		}

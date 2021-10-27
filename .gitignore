@@ -2,3 +2,5 @@ obj
 niilosoundboard
 Makefile
 *.png
+*.mp3
+sounds

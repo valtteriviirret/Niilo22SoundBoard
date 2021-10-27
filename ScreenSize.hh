@@ -3,8 +3,8 @@
 
 enum Screen
 {
-	width = 640,
-	height = 480
+	width = 600,
+	height = 400
 };
 
 #endif
