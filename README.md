@@ -4,7 +4,7 @@ Soundboard application made with SDL2
 ![Program in action](images/program.png)
 
 # How to run the program:
-1. Install dependencies.
+1. Install dependencies.  
 Debian
 ```
 sudo apt install libsdl2-dev
