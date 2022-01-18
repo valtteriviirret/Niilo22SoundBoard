@@ -9,7 +9,7 @@ bool Window::createWindow()
 	bool w = true;
 	
 	// creating the window
-	window = SDL_CreateWindow("Niilo22 SoundBoard", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Screen::width, Screen::height, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("Niilo22 SoundBoard", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Screen::width, Screen::height, SDL_WINDOW_RESIZABLE);
 	if(window == NULL)
 	{
 		std::cout << "Could not create window! Error: " << SDL_GetError() << "\n";
